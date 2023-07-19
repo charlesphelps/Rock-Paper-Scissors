@@ -13,36 +13,36 @@ function getComputerChoice() {
     }
 }
 
-// function playRound(playerSelection, computerSelection) {
-    // Computer = Rock
-    // if (getComputerChoice() = "rock" && playerSelection = "rock") {
-        // return "draw";
-   // } else if (getComputerChoice() = "rock" && playerSelection = "scissors") {
-//        return "computer wins";
-  //  } else (getComputerChoice() = "rock" && playerSelection = "paper") {
-    //    return "player wins";
-    //}
 
-    // Computer = Paper
-//    if (getComputerChoice() = "paper" && playerSelection = "paper") {
-  //      return "draw";
-   // } else if (getComputerChoice() = "paper" && playerSelection = "rock") {
-     //   return "computer wins";
- //   } else (getComputerChoice() = "paper" && playerSelection = "scissors") {
-   //     return "player wins";
- //   }
+function playRound (playerSelection,computerSelection) {
 
-    // Computer = Scissors
-//    if (getComputerChoice()= "scissors" && playerSelection = "scissors") {
-//        return "draw";
-//    } else if (getComputerChoice() = "scissors" && playerSelection = "paper") {
-//        return "computer wins";
-//    } else (getComputerChoice() = "scissors" && playerSelection = "rock") {
-//        return "player wins";
-//    }
-//}
+    if (playerSelection === computerSelection) {
+        return "Draw!";
+    }
 
-//const playerSelection = toLowerCase("rock");
-//const computerSelection = getComputerChoice();
-//
-//console.log(playRound(playerSelection, computerSelection));
+    if (playerSelection === "rock") {
+        if (computerSelection === "paper") {
+            return "You lose! Paper beats rock!";
+        } else (computerSelection === "scissors")
+            return "You win! Rock beats scissors!";
+    }
+
+    if (playerSelection === "paper") {
+        if (computerSelection === "scissors") {
+            return "You lose! Scissors beats paper!";
+        } else (computerSelection === "rock")
+            return "You win! Paper beats rock!";
+    }
+    
+    if (playerSelection === "scissors") {
+        if (computerSelection === "rock") {
+            return "You lose! Rock beats scissors!";
+        } else (computerSelection === "paper")
+            return "You win! Scissors beats paper!";
+    }
+
+}
+
+const playerSelection = "rock";
+const computerSelection = getComputerChoice();
+console.log(playRound(playerSelection, computerSelection));
