@@ -10,25 +10,32 @@ let getComputerChoice = () => {
 let playRound = (playerSelection,computerSelection) => {
 
     if (playerSelection === computerSelection) {
+        console.log("draw");
         return playerScore + 0;
     }
     if (playerSelection === "rock") {
         if (computerSelection === "paper") {
+            console.log("paper beats rock");
             return ++compScore;
         } else (computerSelection === "scissors")
+            console.log("rock beats scissors");
             return ++playerScore;
     }
     if (playerSelection === "paper") {
         if (computerSelection === "scissors") {
+            console.log("scissors beats paper");
             return ++compScore;
         } else (computerSelection === "rock")
+            console.log("paper beats rock");
             return ++playerScore;
     }
 
     if (playerSelection === "scissors") {
         if (computerSelection === "rock") {
+            console.log("rock beats scissors");
             return ++compScore;
     } else (computerSelection === "paper")
+        console.log("scissors beats paper");
         return ++playerScore;
     }
 };
