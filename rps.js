@@ -1,26 +1,18 @@
 let playerScore = 0;
 let compScore = 0;
+let arr = ["rock", "paper", "scissors"];
+let computerSelection;
 
-function getComputerChoice() {
+let getComputerChoice = () => {
+    return computerSelection = (arr[(Math.floor(Math.random() * arr.length))])
+};
+const playerSelection = prompt('Choose what to throw', "").toLowerCase();
 
-    let compChoice = Math.floor(((Math.random()) * 100)-1);
-    //compChoice algorithm is working
-    console.log(compChoice);
-
-    if (compChoice < 33) {
-        return "rock";
-    } else if (compChoice > 33 && compChoice < 66) {
-        return "paper";
-    } else {
-        return "scissors";
-    }
-}
-
-function playRound (playerSelection,computerSelection) {
+let playRound = (playerSelection,computerSelection) => {
 
     if (playerSelection === computerSelection) {
         // Not logged to console. Draw seems to be broken. Find other way to log, or possibly fix function so computerSelection is working and compScore is logging.
-        return console.log("Draw");
+        return playerScore + 0;
     }
 
     if (playerSelection === "rock") {
@@ -31,7 +23,6 @@ function playRound (playerSelection,computerSelection) {
     }
     if (playerSelection === "paper") {
         if (computerSelection === "scissors") {
-            console.log(computerSelection);
             return ++compScore;
         } else (computerSelection === "rock")
             return ++playerScore;
@@ -39,26 +30,23 @@ function playRound (playerSelection,computerSelection) {
 
     if (playerSelection === "scissors") {
         if (computerSelection === "rock") {
-            console.log(computerSelection);
             return ++compScore;
     } else (computerSelection === "paper")
-        console.log(computerSelection);
         return ++playerScore;
     }
-}
+};
 
 const game = () => {
-    for (let i = 0; i < 5; i++) {
-        const playerSelection = prompt('Choose what to throw', "").toLowerCase();
-        const computerSelection = getComputerChoice;
-        playRound(playerSelection,computerSelection)
-        console.log(playerScore + " to " + compScore)
+    for (let i = 1; i < 6; i++) {
+        getComputerChoice();
+        playRound(playerSelection,computerSelection);
+        console.log("Round "+ i + ": " + playerScore + " to " + compScore + ".");
     }
 // compChoice seems to not log a value in function. returns "You win" in five rounds every time.
     if (playerScore > compScore) {
-        console.log("You win");
+        console.log("you win");
     } else if (playerScore < compScore) {
-        console.log("You lose");
+        console.log("you lose");
     } else {
         console.log("tie");;
     }
@@ -69,4 +57,3 @@ const game = () => {
 
 // code below is for validating playRound function
 //console.log(playRound(playerSelection, computerSelection));
-
