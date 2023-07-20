@@ -6,15 +6,12 @@ let computerSelection;
 let getComputerChoice = () => {
     return computerSelection = (arr[(Math.floor(Math.random() * arr.length))])
 };
-const playerSelection = prompt('Choose what to throw', "").toLowerCase();
 
 let playRound = (playerSelection,computerSelection) => {
 
     if (playerSelection === computerSelection) {
-        // Not logged to console. Draw seems to be broken. Find other way to log, or possibly fix function so computerSelection is working and compScore is logging.
         return playerScore + 0;
     }
-
     if (playerSelection === "rock") {
         if (computerSelection === "paper") {
             return ++compScore;
@@ -36,13 +33,15 @@ let playRound = (playerSelection,computerSelection) => {
     }
 };
 
+
 const game = () => {
     for (let i = 1; i < 6; i++) {
+        let playerSelection = prompt('Choose what to throw', "").toLowerCase();
         getComputerChoice();
         playRound(playerSelection,computerSelection);
         console.log("Round "+ i + ": " + playerScore + " to " + compScore + ".");
     }
-// compChoice seems to not log a value in function. returns "You win" in five rounds every time.
+
     if (playerScore > compScore) {
         console.log("you win");
     } else if (playerScore < compScore) {
@@ -54,6 +53,3 @@ const game = () => {
     };
 
     game();
-
-// code below is for validating playRound function
-//console.log(playRound(playerSelection, computerSelection));
