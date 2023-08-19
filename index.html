@@ -1,20 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Rock Paper Scissors Game Revised</title>
-  <script src="rps.js" defer></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock Paper Scissors Game</title>
+    <script src="rps.js" defer></script>
+    <link rel="stylesheet" href="styles.css">
+
 </head>
 <body>
-  <h1>🪨(rock)📄(paper)✂️(scissors)</h1>
-  <div id="scoreboard">
-    Scoreboard
-  </div>
-  <br>
-  <br>
-  <button id="rock">🪨</button>
-  <button id="paper">📄</button>
-  <button id="scissors">✂️</button>
+    <div class="reveal-text-container">
+        <h1 class="reveal-text">Welcome to Rock Paper Scissors<span class="reveal-bg"></span></h1>
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <div class="iconStrobeBox">
+        <img class="rock1" src="rock.png">
+        <img class="paper1" src="paper.png">
+        <img class="scissors1" src="scissors.png">
+    </div>
+    <div class="scoreboard">
+        <!-- Left Side of gameBox-->
+        <div class="scoreBox">
+            <div class="scoreHeader">
+                <h3><strong>Score</strong></h3>
+            </div>
+            <div class="scoreBoxLabel">
+                <p>You:</p>
+                <p>Computer:</p>
+            </div>
+            <div class="scoreBoxImgs">
+                <img>
+                <img>
+            </div>
+        </div>
+        <!-- Middle of gameBox-->
+        <div class="handBox">
+            <div class="handBoxLabel">
+                <p><u>You</u></p>
+                <p><u>Computer</u></p>
+            </div>
+            <div class="handBoxImgs">
+                <img>
+                <img>
+            </div>
+        </div>
+        <!-- Right Side of gameBox-->
+        <div class="resultBox">
+            <div class="resultBoxLabel">
+                <h3><strong>Announcer</strong></h3>
+            </div>
+            <div class="resultBoxMessage">
+
+            </div>
+        </div>
+    </div>
+    <div class="buttonBox">
+        <button class="rockBtn">
+            <img class="rock-button-img" src="rockbtn.jpg" alt="rock button"></img>
+        </button>
+        <button class="paperBtn">
+            <img class = "paper-button-img" src="paperbtn.jpg" alt="paper button"></img>
+        </button>
+        <button class="scissorsBtn">
+            <img class="scissors-button-img" src="scissorsbtn.png" alt="scissors button"></img>
+        </button>
+    </div>
 </body>
 </html>
